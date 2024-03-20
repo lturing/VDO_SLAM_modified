@@ -1,3 +1,40 @@
+连续多帧估计光流
+
+## 准备工作
+1. 从[官方提供的预训练模型](https://drive.google.com/drive/folders/16YqDD_IQpzrVWvDHI9xK3kO0MaXnNIGx?usp=sharing)下载以MOF开头的，比如MOF_kitti.pth，并保存在VideoFlow_ckpt目录下    
+2. 从[预训练模型](https://github.com/rwightman/pytorch-image-models/releases/download/v0.1-vt3p-weights/twins_svt_large-90f6aaa9.pth)下载twins_svt_large-90f6aaa9.pth，并保存在VideoFlow_ckpt目录下    
+3. 安装相关的python包  
+```
+conda create --name videoflow
+conda activate videoflow
+conda install pytorch=1.6.0 torchvision=0.7.0 cudatoolkit=10.1 matplotlib tensorboard scipy opencv-python -c pytorch
+pip install yacs loguru einops timm==0.4.12 imageio
+```
+
+## 运行
+```
+python -u inference_sequence.py --mode MOF --seq_dir /home/spurs/dataset/2011_10_03/2011_10_03_drive_0047_sync/image_02/data --vis_dir demo_flow_vis
+```
+
+## 说明
+根据[multiframes_sintel_submission.py](./configs/multiframes_sintel_submission.py)中的_CN.input_frames，进行光流估计，input_frames表示输入的frame长度。     
+例如:    
+1 2 3 4 5 
+则生成2->3, 3->4, 4-5(前向)，以及生成1<-2, 2<-3, 3<-4(反向)的光流估计    
+因此为了生成1->2，可以将序列改为：1 1 2 3 4 5      
+
+例如：
+1 1 2 3 4 5 6 7 8 
+则代码会以下方式输入到模型中      
+1 1 2 3 4, 1->2, 2->3, 3->4     
+3 4 5 6 7, 4->5, 5->6, 6->7     
+6 7 8 8 8, 7->8
+
+
+<br>
+<details>
+  <summary><strong>offical readme</strong>(click to expand)</summary>
+
 # [VideoFlow: Exploiting Temporal Cues for Multi-frame Optical Flow Estimation](https://arxiv.org/abs/2303.08340)
 <!-- ### [Project Page](https://drinkingcoder.github.io/publication/flowformer/)  -->
 
@@ -130,3 +167,6 @@ In this project, we use parts of codes in:
 - [RAFT](https://github.com/princeton-vl/RAFT)
 - [GMA](https://github.com/zacjiang/GMA)
 - [timm](https://github.com/rwightman/pytorch-image-models)
+
+
+</details>

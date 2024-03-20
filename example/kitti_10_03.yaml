@@ -85,5 +85,5 @@ ORBextractor.minThFAST: 7
 
 
 # yolov8 segmentation onnx path 
-seg_onnx_path: /home/spurs/x/yolov8/yolov8s-seg.onnx
+seg_onnx_path: yolov8s-seg.onnx
 

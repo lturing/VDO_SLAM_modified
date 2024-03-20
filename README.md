@@ -1,3 +1,31 @@
+在动态环境中，相比剔除动态物体上的特征点，VDO_SLAM结合图像分割、光流估计以及深度估计等算法，除了估算相机位姿外，还估算了动态物体的位姿以及跟踪
+
+## b站视频
+- [vdo_slam](https://www.bilibili.com/video/BV1vJ4m187jp)    
+<div align=center><img src="./vdo_slam.png" width="80%"/></div>
+
+## example
+### 准备工作
+1. kitti测试数据下载      
+链接：https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_drive_0047/2011_10_03_drive_0047_sync.zip     
+相关参数：https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_calib.zip    
+2. 参照[VideoFlow](./VideoFlow)，生成光流估计      
+3. 参照[ZoeDepth](./ZoeDepth)，生成深度信息   
+4. 从[yolov8](https://github.com/ultralytics/assets/releases/)下载yolov8 seg onnx，比如[yolov8 seg small](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8s-seg.pt)，并放在当前目录下      
+5. opencv-4.0+, pangolin-0.6       
+
+## 运行
+```
+./example/vdo_slam example/kitti_10_03.yaml /home/spurs/dataset/kitti_raw/2011_10_03/2011_10_03_drive_0047_sync/image_02
+```
+
+
+
+
+<br>
+<details>
+  <summary><strong>offical readme</strong>(click to expand)</summary>
+
 # VDO-SLAM
 **Authors:** [Jun Zhang*](https://halajun.github.io/), [Mina Henein*](https://minahenein.github.io/), [Robert Mahony](https://users.cecs.anu.edu.au/~Robert.Mahony/) and [Viorela Ila](http://viorelaila.net/) 
 (*equally contributed)
@@ -145,7 +173,7 @@ The provided object pose format of **OMD** dataset is axis-angle + translation v
 
 
 
-
+</details>
 
 
 

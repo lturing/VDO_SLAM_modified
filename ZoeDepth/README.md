@@ -1,3 +1,28 @@
+单目真实深度估计(metric depth)   
+
+## 准备工作
+1. 参照[官方readme](https://github.com/isl-org/ZoeDepth)下载dpt_beit_large_384.pt   
+2. 从[官方](https://github.com/isl-org/ZoeDepth/releases/tag/v1.0)下载对应的zodepth预训练模型，其中ZoeD-M12-N(for indoor)，ZoeD-M12-K(for outdoor)，ZoeD-M12-NK(for indoor and outdoor)      
+3. 安装环境   
+```
+conda env create -n zoe --file environment.yml
+conda activate zoe
+```
+
+## 运行
+```
+# 修改predict_depth.py中的img_dir图片目录
+python predict_depth.py
+```
+
+## 说明
+predict_depth.py中的深度信息以uint16格式保存，保存前会将深度信息放大256倍，所以在后续使用时需除以256恢复真实的深度，参照[zoedepth/utils/misc.py](zoedepth/utils/misc.py)中的save_raw_16bit
+
+<br>
+<details>
+  <summary><strong>offical readme</strong>(click to expand)</summary>
+
+
 # **ZoeDepth: Combining relative and metric depth** (Official implementation)  <!-- omit in toc -->
 [![Open In Collab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/isl-org/ZoeDepth)
 [![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/raw/main/open-in-hf-spaces-sm.svg)](https://huggingface.co/spaces/shariqfarooq/ZoeDepth)
@@ -237,7 +262,7 @@ The UI is also hosted on HuggingFace🤗 [here](https://huggingface.co/spaces/sh
 
 
 
-
+</details>
 
 
 
