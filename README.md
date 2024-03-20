@@ -20,6 +20,9 @@
 ```
 
 
+## 相关的论文
+- [Robust Ego and Object 6-DoF Motion Estimation and Tracking](https://arxiv.org/abs/2007.13993)
+- [VDO-SLAM: A Visual Dynamic Object-aware SLAM System](https://arxiv.org/abs/2005.11052)
 
 
 <br>
