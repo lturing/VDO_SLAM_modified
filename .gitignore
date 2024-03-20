@@ -127,8 +127,5 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-*.png
 *.pfm
-*.jpg
-*.jpeg
 *.pt
