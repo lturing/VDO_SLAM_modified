@@ -1,0 +1,2 @@
+python -u inference_sequence.py --mode MOF --seq_dir /home/spurs/dataset/2011_10_03/2011_10_03_drive_0047_sync/image_02/data --vis_dir demo_flow_vis
+

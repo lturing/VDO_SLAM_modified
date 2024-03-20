@@ -1,0 +1,3 @@
+./example/vdo_slam example/kitti_10_03.yaml /home/spurs/dataset/kitti_raw/2011_10_03/2011_10_03_drive_0047_sync/image_02
+
+
