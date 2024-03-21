@@ -7,8 +7,8 @@
 ## example
 ### 准备工作
 1. kitti测试数据下载      
-链接：https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_drive_0047/2011_10_03_drive_0047_sync.zip     
-相关参数：https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_calib.zip    
+链接：[kitti_10_03](https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_drive_0047/2011_10_03_drive_0047_sync.zip)     
+相关参数：[calib](https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_10_03_calib.zip)    
 2. 参照[VideoFlow](./VideoFlow)，生成光流估计      
 3. 参照[ZoeDepth](./ZoeDepth)，生成深度信息   
 4. 从[yolov8](https://github.com/ultralytics/assets/releases/)下载yolov8 seg onnx，比如[yolov8 seg small](https://github.com/ultralytics/assets/releases/download/v8.1.0/yolov8s-seg.pt)，并放在当前目录下      
