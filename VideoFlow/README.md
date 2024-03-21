@@ -17,7 +17,7 @@ python -u inference_sequence.py --mode MOF --seq_dir /home/spurs/dataset/2011_10
 ```
 
 ## 说明
-根据[multiframes_sintel_submission.py](./configs/multiframes_sintel_submission.py)中的_CN.input_frames，进行光流估计，input_frames表示输入的frame长度。     
+根据[multiframes_sintel_submission.py](./configs/multiframes_sintel_submission.py)中的_CN.input_frames，进行光流估计，input_frames表示输入frame的长度。     
 例如:    
 1 2 3 4 5 
 则生成2->3, 3->4, 4-5(前向)，以及生成1<-2, 2<-3, 3<-4(反向)的光流估计    

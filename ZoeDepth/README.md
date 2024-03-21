@@ -16,7 +16,7 @@ python predict_depth.py
 ```
 
 ## 说明
-predict_depth.py中的深度信息以uint16格式保存，保存前会将深度信息放大256倍，所以在后续使用时需除以256恢复真实的深度，参照[zoedepth/utils/misc.py](zoedepth/utils/misc.py)中的save_raw_16bit
+predict_depth.py中的深度信息以uint16格式保存，保存前会将float类型的深度信息放大256倍，来提高保存的精度。所以在后续使用时需除以256恢复真实的深度，参照[zoedepth/utils/misc.py](zoedepth/utils/misc.py)中的save_raw_16bit
 
 <br>
 <details>
