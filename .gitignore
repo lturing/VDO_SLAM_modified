@@ -21,6 +21,7 @@ VideoFlow/VideoFlow_ckpt/twins_svt_large-90f6aaa9.pth
 ZoeDepth/dpt_beit_large_384.pt
 ZoeDepth/ZoeD_M12_K.pt
 ZoeDepth/ZoeD_M12_NK.pt
+yolov8s-seg.onnx
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

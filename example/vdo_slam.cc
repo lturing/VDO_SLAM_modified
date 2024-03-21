@@ -121,7 +121,7 @@ int main(int argc, char **argv)
     mySegOnnxCV->setInputSize(inputSize);
 
     int StopFrame = nImages-1;
-    for(int ni=StopFrame-100; ni<StopFrame; ni++)
+    for(int ni=0; ni<StopFrame; ni++)
     {
         cout << endl;
         cout << "=======================================================" << endl;

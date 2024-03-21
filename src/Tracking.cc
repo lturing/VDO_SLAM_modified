@@ -474,7 +474,7 @@ cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB, cv::Mat &imD, const cv::Ma
     }
 
     // ************** show bounding box with speed ***************
-    if(timestamp!=0 && bFrame2Frame == true && mTestData==KITTI)
+    if(timestamp!=0 && bFrame2Frame == true)
     {
         //cv::Mat mImBGR(mImGray.size(), CV_8UC3);
         //cvtColor(mImGray, mImBGR, cv::COLOR_GRAY2RGB);
@@ -1449,11 +1449,6 @@ std::vector<std::vector<int> > Tracking::DynObjTracking()
     std::vector<std::vector<int> > ObjId;
     std::vector<int> sem_posi; // semantic label position for the objects
     int shrin_thr_row=0, shrin_thr_col=0;
-    if (mTestData==KITTI)
-    {
-        shrin_thr_row = 5;
-        shrin_thr_col = 5;
-    }
     shrin_thr_row = 0;
     shrin_thr_col = 0;
 
