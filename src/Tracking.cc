@@ -189,20 +189,14 @@ cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB, cv::Mat &imD, const cv::Ma
                 imD.at<float>(i,j)=0;
             else
             {
-                if (mTestData==OMD)
-                {
-                    // --- for stereo depth map ---
-                    imD.at<float>(i,j) = mbf/(imD.at<float>(i,j)/mDepthMapFactor);
-                    // --- for RGB-D depth map ---
-                    // imD.at<float>(i,j) = imD.at<float>(i,j)/mDepthMapFactor;
-                }
-                else if (mTestData==KITTI)
-                {
-                    // --- for stereo depth map ---
-                    // imD.at<float>(i,j) = mbf/(imD.at<float>(i,j)/mDepthMapFactor);
-                    // --- for monocular depth map ---
-                    imD.at<float>(i,j) = imD.at<float>(i,j)/256.0; // for zoedepth
-                }
+                // --- for stereo depth map ---
+                // imD.at<float>(i,j) = mbf/(imD.at<float>(i,j)/mDepthMapFactor);
+
+                // --- for RGB-D depth map ---
+                // imD.at<float>(i,j) = imD.at<float>(i,j)/mDepthMapFactor;
+
+                // --- for monocular depth map ---
+                imD.at<float>(i,j) = imD.at<float>(i,j)/mDepthMapFactor; // for zoedepth
             }
         }
     }
